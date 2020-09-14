@@ -4,8 +4,18 @@ const path = require('path');
 const serverless = require('serverless-http');
 const app = express();
 
-app.use('/away', (req, res) => res.sendFile(path.join(__dirname, '../pages/away.html')));
-app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../pages/index.html')));
+// Static Files
+app.use(express.static(__dirname))
+
+// Routes
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/pages/index.html'));
+});
+
+app.get('/away', function(req, res) {
+    res.sendFile(path.join(__dirname + '/pages/away.html'))
+});
+
 
 module.exports = app;
 module.exports.handler = serverless(app);
