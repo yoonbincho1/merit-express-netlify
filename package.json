@@ -4,7 +4,7 @@
   "description": "Example of how to deploy a Express.js Netlify app.",
   "main": "functions/server.js",
   "scripts": {
-    "build": "mv pages/* . && rmdir pages && netlify-lambda build express",
+    "build": "sh build.sh && netlify-lambda build express",
     "start": "nodemon server-local.js"
   },
   "repository": {
