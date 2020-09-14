@@ -21,6 +21,8 @@ npm install
 npm start
 ```
 
+When you add a page in ```pages/```, you need to specify the route and the filename in [express/routes.js](express/routes.js).
+
 
 
 
