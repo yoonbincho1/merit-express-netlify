@@ -5,7 +5,8 @@
   "main": "functions/server.js",
   "scripts": {
     "build": "sh build.sh && netlify-lambda build express",
-    "start": "nodemon server-local.js"
+    "start": "nodemon server-local.js",
+    "scss": "node-sass static/scss/main.scss -o static"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,10 @@
   },
   "homepage": "https://github.com/buckldav/merit-express-netlify#readme",
   "dependencies": {
+    "bootstrap": "^4.5.2",
     "express": "^4.17.1",
     "netlify-lambda": "^2.0.1",
+    "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "serverless-http": "^2.5.0"
   },
